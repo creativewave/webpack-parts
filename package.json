@@ -1,0 +1,31 @@
+{
+  "name": "@cdoublev/webpack-parts",
+  "description": "Webpack configuration parts",
+  "author": "Guillaume Lebas",
+  "license": "MIT",
+  "keywords": [
+    "webpack"
+  ],
+  "version": "0.1.0",
+  "engines": {
+    "node": ">= 12"
+  },
+  "homepage": "https://github.com/creativewave/webpack-parts",
+  "bugs": "https://github.com/creativewave/webpack-parts/issues",
+  "repository": "github:creativewave/webpack-parts",
+  "peerDependencies": {
+    "webpack": ">= 4"
+  },
+  "optionalDependencies": {
+    "babel-loader": ">= 8",
+    "css-loader": ">= 4",
+    "html-webpack-plugin": ">= 4",
+    "mini-css-extract-plugin": ">= 0.10",
+    "postcss-loader": ">= 3",
+    "style-loader": ">= 1",
+    "webpack-dev-server": ">= 3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
