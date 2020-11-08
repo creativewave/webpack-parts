@@ -8,7 +8,7 @@
   ],
   "version": "0.1.0",
   "engines": {
-    "node": ">= 12"
+    "node": ">= 14"
   },
   "homepage": "https://github.com/creativewave/webpack-parts",
   "bugs": "https://github.com/creativewave/webpack-parts/issues",
