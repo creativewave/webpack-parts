@@ -22,9 +22,9 @@ The configuration options are intentionally minimal, in order to keep a small in
 
   module.exports = merge(
   {
-      mode: 'development',
-      output: { publicPath: '/' },
-      plugins: [new HtmlWebpackPlugin()],
+    mode: 'development',
+    output: { publicPath: '/' },
+    plugins: [new HtmlWebpackPlugin()],
   },
   parts.extractFiles(),
   parts.extractCss(),
@@ -67,7 +67,10 @@ Some parts have dependencies (Webpack loaders and plugins) listed below, that ar
 
 Depends on [`css-loader`](https://github.com/webpack-contrib/css-loader), [`postcss-loader`](https://github.com/webpack-contrib/postcss-loader), and [`mini-css-extract-plugin`](https://github.com/webpack-contrib/https://github.com/webpack-contrib/mini-css-extract-plugin).
 
-Note: you should avoid using `[hash]`, `[chunkhash]`, or `[contenthash]` for `chunkFilename` and `filename` when developing, eg. `{ chunkFilename: [id].css, filename: [name].css }`, as they're currently breaking hot module replacement.
+Notes:
+
+- you should avoid using `[hash]`, `[chunkhash]`, or `[contenthash]` for `chunkFilename` and `filename` when developing, eg. `{ chunkFilename: [id].css, filename: [name].css }`, as they're currently breaking hot module replacement
+- CSS modules couldn't be hot reloaded yet (see [this issue](https://github.com/webpack-contrib/mini-css-extract-plugin/issues/519))
 
 ### `extractFiles`
 
