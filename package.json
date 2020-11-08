@@ -6,7 +6,7 @@
   "keywords": [
     "webpack"
   ],
-  "version": "0.1.0",
+  "version": "0.2.0",
   "engines": {
     "node": ">= 14"
   },
@@ -26,5 +26,13 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "babel-loader": ">= 8",
+    "css-loader": ">= 5",
+    "html-webpack-plugin": ">= 4",
+    "mini-css-extract-plugin": ">= 1",
+    "postcss-loader": ">= 4",
+    "webpack-dev-server": ">= 3"
   }
 }
