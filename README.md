@@ -69,7 +69,7 @@ Depends on [`css-loader`](https://github.com/webpack-contrib/css-loader), [`post
 
 Notes:
 
-- you should avoid using `[hash]`, `[chunkhash]`, or `[contenthash]` for `chunkFilename` and `filename` when developing, eg. `{ chunkFilename: [id].css, filename: [name].css }`, as they're currently breaking hot module replacement
+- you should avoid using `[hash]`, `[chunkhash]`, or `[contenthash]` for `filename` and `chunkFilename` to get hot module replacement
 - CSS modules couldn't be hot reloaded yet (see [this issue](https://github.com/webpack-contrib/mini-css-extract-plugin/issues/519))
 
 ### `extractFiles`
@@ -87,7 +87,7 @@ Depends on [`file-loader`](https://github.com/webpack-contrib/file-loader).
 
 `hotModuleReload()` enables [hot module replacement](https://webpack.js.org/plugins/hot-module-replacement-plugin/).
 
-**Note:** it's automatically enabled when adding `serverDev()`.
+**Note:** it's automatically enabled with `serverDev()`.
 
 ### `loadJs`
 
@@ -106,7 +106,7 @@ Depends on [`babel-loader`](https://github.com/babel/babel-loader).
 | ------ | ------- | ------------- |
 | https  | Boolean | `false`       |
 | domain | String  | `'localhost'` |
-| port   | Number  | `8080         |
+| port   | Number  | `8080`        |
 | path   | String  | `'/'`         |
 | proxy  | String  | `undefined`   |
 
@@ -123,7 +123,7 @@ Depends on [`webpack-dev-server`](https://github.com/webpack/webpack-dev-server/
 | filename   | String | `'render.js'` |
 | publicPath | String | `'/'`         |
 
-`serverRender()` bundles a JavaScript entry into a single chunk with all CSS and multimedia files excluded.
+`serverRender()` bundles a JavaScript entry into a single chunk excluding all CSS and multimedia files.
 
 This entry file should be located in a `server` directory at the root of your project. It's mostly meant to render the HTML of a JavaScript application on the server, before executing (hydrating) it client side.
 
