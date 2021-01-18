@@ -26,13 +26,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {
-    "babel-loader": ">= 8",
-    "css-loader": ">= 5",
-    "html-webpack-plugin": ">= 4",
-    "mini-css-extract-plugin": ">= 1",
-    "postcss-loader": ">= 4",
-    "webpack-dev-server": ">= 3"
   }
 }
