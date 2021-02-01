@@ -7,11 +7,11 @@
 
 ## About
 
-`@cdoublev/wepback-parts` allows to quickly create Webpack configuration(s) using composable parts.
+`@cdoublev/wepback-parts` allows to quickly create a Webpack configuration using composable parts.
 
 Each part is a function that can be passed an optional configuration object. [`webpack-merge`](https://github.com/survivejs/webpack-merge) is recommended to merge parts.
 
-The configuration options are intentionally minimal, in order to keep a small interface and reduce noise, to only use recommended values, and to fit to `@creativewave` sacred needs. Feel free to fork it!
+The configuration parameters are all optional and intentionally minimal in order to keep a simple interface, and are assigned the recommended default values.
 
 **Example (`webpack.config.js`)**
 
@@ -28,7 +28,7 @@ The configuration options are intentionally minimal, in order to keep a small in
   },
   parts.extractFiles(),
   parts.extractCss(),
-  parts.loadJsChunks(),
+  parts.loadJs(),
   parts.serverDev())
 ```
 
@@ -40,46 +40,46 @@ The configuration options are intentionally minimal, in order to keep a small in
 
 `@cdoublev/webpack-parts` can be safely used in current NodeJS LTS and latest versions.
 
-Some parts have dependencies (Webpack loaders and plugins) listed below, that are not automatically installed.
+Some parts depends on (and are documented with) Webpack loaders and plugins that are not automatically installed.
 
 ## Configuration
 
 ### `externalize`
 
-| Option | Type     | Default |
-| ------ | -------- | ------- |
-| keep   | [String] | `[]`    |
+| Option | Type       | Default |
+| ------ | ---------- | ------- |
+| keep   | `[String]` | `[]`    |
 
 `externalize()` excludes all `node_modules` from the bundle, which is recommended for server side script, and `keep` the required module names bundled.
 
 ### `extractCss`
 
-| Option        | Type           | Default                                                |
-| ------------- | -------------- | ------------------------------------------------------ |
-| chunkFilename | String         | `'[name]-[contenthash].[ext]'`                         |
-| exclude       | Condition      | `undefined`                                            |
-| filename      | String         | `'[name]-[contenthash].[ext]'`                         |
-| hmr           | Boolean        | `true`                                                 |
-| include       | Condition      | `undefined`                                            |
-| modules       | Boolean|Object | `{ localIdentName: '[name]_[local]_[hash:base64:5]' }` |
+| Option        | Type             | Default                                                |
+| ------------- | ---------------- | ------------------------------------------------------ |
+| chunkFilename | `String`         | `'[name]-[contenthash].[ext]'`                         |
+| exclude       | `Condition`      | `undefined`                                            |
+| filename      | `String`         | `'[name]-[contenthash].[ext]'`                         |
+| hmr           | `Boolean`        | `true`                                                 |
+| include       | `Condition`      | `undefined`                                            |
+| modules       | `Boolean|Object` | `{ localIdentName: '[name]_[local]_[hash:base64:5]' }` |
 
 `extractCss()` resolves CSS files imported in JavaScript files, transpile their PostCSS syntax and features, generates locally scoped CSS class names (CSS modules), and emits the corresponding files into the output directory.
 
 Depends on [`css-loader`](https://github.com/webpack-contrib/css-loader), [`postcss-loader`](https://github.com/webpack-contrib/postcss-loader), and [`mini-css-extract-plugin`](https://github.com/webpack-contrib/https://github.com/webpack-contrib/mini-css-extract-plugin).
 
-Notes:
+**Notes:**
 
-- you should avoid using `[hash]`, `[chunkhash]`, or `[contenthash]` for `filename` and `chunkFilename` to get hot module replacement
-- CSS modules couldn't be hot reloaded yet (see [this issue](https://github.com/webpack-contrib/mini-css-extract-plugin/issues/519))
+- you should avoid using `[hash]`, `[chunkhash]`, and `[contenthash]`, for `filename` and `chunkFilename`, in order to get hot module replacement
+- hot CSS module replacement is currently not supported by `mini-css-extract-plugin` (see [this issue](https://github.com/webpack-contrib/mini-css-extract-plugin/issues/519))
 
 ### `extractFiles`
 
-| Option   | Type   | Default                        |
-| -------- | ------ | ------------------------------ |
-| context  | String | `'src'`                        |
-| filename | String | `'[name]-[contenthash].[ext]'` |
+| Option   | Type     | Default                        |
+| -------- | -------- | ------------------------------ |
+| context  | `String` | `'src'`                        |
+| filename | `String` | `'[name]-[contenthash].[ext]'` |
 
-`extractFiles()` resolves multimedia files (images, fonts, pdf, etc...) imported from other files, and creates them into the output directory.
+`extractFiles()` resolves multimedia files (images, fonts, pdf, etc...) imported from other files, and copy/paste them into the output directory.
 
 Depends on [`file-loader`](https://github.com/webpack-contrib/file-loader).
 
@@ -91,24 +91,24 @@ Depends on [`file-loader`](https://github.com/webpack-contrib/file-loader).
 
 ### `loadJs`
 
-| Option  | Type      | Default          |
-| ------- | --------- | ---------------- |
-| include | Condition | `undefined`      |
-| exclude | Condition | `/node_modules/` |
+| Option  | Type        | Default          |
+| ------- | ----------- | ---------------- |
+| include | `Condition` | `undefined`      |
+| exclude | `Condition` | `/node_modules/` |
 
-`loadJs()` resolves JavaScript files defined as entry points or imported in other JavaScript files, transpiles their syntax with `babel`, extracts the Webpack runtime into a single chunk, and split the bundle into multiple chunks to speed up their loading via HTTP/2.
+`loadJs()` resolves JavaScript files defined as entry points or imported in other JavaScript files, transpiles their syntax with `babel`, extracts the Webpack runtime into a separate `runtime.js` file, and gather common modules into a single `common.js` file.
 
 Depends on [`babel-loader`](https://github.com/babel/babel-loader).
 
 ### `serverDev`
 
-| Option | Type    | Default       |
-| ------ | ------- | ------------- |
-| https  | Boolean | `false`       |
-| domain | String  | `'localhost'` |
-| port   | Number  | `8080`        |
-| path   | String  | `'/'`         |
-| proxy  | String  | `undefined`   |
+| Option | Type      | Default       |
+| ------ | --------- | ------------- |
+| https  | `Boolean` | `false`       |
+| domain | `String`  | `'localhost'` |
+| port   | `Number`  | `8080`        |
+| path   | `String`  | `'/'`         |
+| proxy  | `String`  | `undefined`   |
 
 `serverDev()` runs an HTTP server to request your bundled files, by default via `http://localhost:8080`, with hot module replacement enabled.
 
@@ -118,21 +118,22 @@ Depends on [`webpack-dev-server`](https://github.com/webpack/webpack-dev-server/
 
 ### `serverRender`
 
-| Option     | Type   | Default       |
-| ---------- | ------ | ------------- |
-| filename   | String | `'render.js'` |
-| publicPath | String | `'/'`         |
+| Option     | Type     | Default        |
+| ---------- | -------- | -------------- |
+| filename   | `String` | `'render.js'`  |
+| mode       | `String` | `'production'` |
+| publicPath | `String` | `'/'`          |
 
-`serverRender()` bundles a JavaScript entry into a single chunk excluding all CSS and multimedia files.
+`serverRender()` bundles a JavaScript entry into a single file with the imported CSS excluded from it.
 
-This entry file should be located in a `server` directory at the root of your project. It's mostly meant to render the HTML of a JavaScript application on the server, before executing (hydrating) it client side.
+This entry should be located in a `server` directory at the root of your project. It's mostly meant to render the HTML of a JavaScript application on the server, before executing (hydrating) it client side.
 
 ### `watch`
 
-| Option           | Type      | Default          |
-| ---------------- | --------- | ---------------- |
-| poll             | Boolean   | `true`           |
-| aggregateTimeout | Number    | `300`            |
-| ignored          | Condition | `/node_modules/` |
+| Option           | Type        | Default          |
+| ---------------- | ----------- | ---------------- |
+| poll             | `Boolean`   | `true`           |
+| aggregateTimeout | `Number`    | `300`            |
+| ignored          | `Condition` | `/node_modules/` |
 
 `watch()` enables files watching and automatic recompilation on change.
