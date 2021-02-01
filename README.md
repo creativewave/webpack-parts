@@ -7,7 +7,7 @@
 
 ## About
 
-`@cdoublev/wepback-parts` allows to quickly create a Webpack configuration using composable parts.
+`@cdoublev/wepback-parts` allows to quickly create a Webpack 5 configuration using composable parts.
 
 Each part is a function that can be passed an optional configuration object. [`webpack-merge`](https://github.com/survivejs/webpack-merge) is recommended to merge parts.
 
@@ -23,7 +23,6 @@ The configuration parameters are all optional and intentionally minimal in order
   module.exports = merge(
   {
     mode: 'development',
-    output: { publicPath: '/' },
     plugins: [new HtmlWebpackPlugin()],
   },
   parts.extractFiles(),
@@ -38,7 +37,7 @@ The configuration parameters are all optional and intentionally minimal in order
   npm i @cdoublev/webpack-parts
 ```
 
-`@cdoublev/webpack-parts` can be safely used in current NodeJS LTS and latest versions.
+`@cdoublev/webpack-parts` can be safely used with Webpack v5 in current NodeJS LTS and latest versions.
 
 Some parts depends on (and are documented with) Webpack loaders and plugins that are not automatically installed.
 
@@ -74,14 +73,11 @@ Depends on [`css-loader`](https://github.com/webpack-contrib/css-loader), [`post
 
 ### `extractFiles`
 
-| Option   | Type     | Default                        |
-| -------- | -------- | ------------------------------ |
-| context  | `String` | `'src'`                        |
-| filename | `String` | `'[name]-[contenthash].[ext]'` |
+| Option   | Type     | Default                |
+| -------- | -------- | ---------------------- |
+| filename | `String` | `'[hash][ext][query]'` |
 
-`extractFiles()` resolves multimedia files (images, fonts, pdf, etc...) imported from other files, and copy/paste them into the output directory.
-
-Depends on [`file-loader`](https://github.com/webpack-contrib/file-loader).
+`extractFiles()` resolves multimedia files (images, fonts, pdf) imported from other files, and copy/paste them into the output directory.
 
 ### `hotModuleReload`
 
@@ -131,8 +127,8 @@ This entry should be located in a `server` directory at the root of your project
 
 | Option           | Type        | Default          |
 | ---------------- | ----------- | ---------------- |
-| poll             | `Boolean`   | `true`           |
-| aggregateTimeout | `Number`    | `300`            |
+| poll             | `Boolean`   | `100`            |
+| aggregateTimeout | `Number`    | `200`            |
 | ignored          | `Condition` | `/node_modules/` |
 
 `watch()` enables files watching and automatic recompilation on change.
