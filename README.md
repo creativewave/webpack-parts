@@ -102,17 +102,16 @@ Depends on [`babel-loader`](https://github.com/babel/babel-loader).
 
 ### `serverDev`
 
-| Option | Type      | Default       |
-| ------ | --------- | ------------- |
-| https  | `Boolean` | `false`       |
-| domain | `String`  | `'localhost'` |
-| port   | `Number`  | `8080`        |
-| path   | `String`  | `'/'`         |
-| proxy  | `String`  | `undefined`   |
+| Option | Type      | Default         |
+| ------ | --------- | --------------- |
+| https  | `Boolean` | `false`         |
+| domain | `String`  | `'localhost'`   |
+| port   | `Number`  | `8080`          |
+| path   | `String`  | `'/'`           |
+| proxy  | `String`  | `undefined`     |
+| watch  | `Object`  | [watch](#watch) |
 
 `serverDev()` runs an HTTP server to request your bundled files, by default via `http://localhost:8080`, with hot module replacement enabled.
-
-Note: `serverDev()` uses defaults `watch()` options.
 
 Depends on [`webpack-dev-server`](https://github.com/webpack/webpack-dev-server/).
 
