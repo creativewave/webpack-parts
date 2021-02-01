@@ -14,7 +14,7 @@
   "bugs": "https://github.com/creativewave/webpack-parts/issues",
   "repository": "github:creativewave/webpack-parts",
   "peerDependencies": {
-    "webpack": ">= 4"
+    "webpack": ">= 5"
   },
   "optionalDependencies": {
     "babel-loader": ">= 8",
