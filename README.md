@@ -118,11 +118,11 @@ Depends on [`webpack-dev-server`](https://github.com/webpack/webpack-dev-server/
 
 ### `serverRender`
 
-| Option     | Type     | Default        |
-| ---------- | -------- | -------------- |
-| filename   | `String` | `'render.js'`  |
-| mode       | `String` | `'production'` |
-| publicPath | `String` | `'/'`          |
+| Option   | Type     | Default        |
+| -------- | -------- | -------------- |
+| filename | `String` | `'render.js'`  |
+| mode     | `String` | `'production'` |
+| path     | `String` | `'/'`          |
 
 `serverRender()` bundles a JavaScript entry into a single file with the imported CSS excluded from it.
 
