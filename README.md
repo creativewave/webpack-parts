@@ -64,7 +64,7 @@ Some parts depends on (and are documented with) Webpack loaders and plugins that
 
 `extractCss()` resolves CSS files imported in JavaScript files, transpile their PostCSS syntax and features, generates locally scoped CSS class names (CSS modules), and emits the corresponding files into the output directory.
 
-Depends on [`css-loader`](https://github.com/webpack-contrib/css-loader), [`postcss-loader`](https://github.com/webpack-contrib/postcss-loader), and [`mini-css-extract-plugin`](https://github.com/webpack-contrib/https://github.com/webpack-contrib/mini-css-extract-plugin).
+Depends on [`css-loader >= 5`](https://github.com/webpack-contrib/css-loader), [`postcss-loader >= 4`](https://github.com/webpack-contrib/postcss-loader), and [`mini-css-extract-plugin >= 1`](https://github.com/webpack-contrib/https://github.com/webpack-contrib/mini-css-extract-plugin).
 
 **Notes:**
 
@@ -94,7 +94,7 @@ Depends on [`css-loader`](https://github.com/webpack-contrib/css-loader), [`post
 
 `loadJs()` resolves JavaScript files defined as entry points or imported in other JavaScript files, transpiles their syntax with `babel`, extracts the Webpack runtime into a separate `runtime.js` file, and gather common modules into a single `common.js` file.
 
-Depends on [`babel-loader`](https://github.com/babel/babel-loader).
+Depends on [`babel-loader >= 8`](https://github.com/babel/babel-loader).
 
 ### `serverDev`
 
@@ -109,7 +109,7 @@ Depends on [`babel-loader`](https://github.com/babel/babel-loader).
 
 `serverDev()` runs an HTTP server to request your bundled files, by default via `http://localhost:8080`, with hot module replacement enabled.
 
-Depends on [`webpack-dev-server`](https://github.com/webpack/webpack-dev-server/).
+Depends on [`webpack-dev-server >= 3`](https://github.com/webpack/webpack-dev-server/).
 
 ### `serverRender`
 
