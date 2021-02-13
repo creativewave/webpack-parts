@@ -19,7 +19,7 @@
   "optionalDependencies": {
     "babel-loader": ">= 8",
     "css-loader": ">= 5",
-    "html-webpack-plugin": ">= 2",
+    "html-webpack-plugin": ">= 5",
     "mini-css-extract-plugin": ">= 1",
     "postcss-loader": ">= 4",
     "webpack-dev-server": ">= 3"
