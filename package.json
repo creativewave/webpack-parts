@@ -13,6 +13,8 @@
   "homepage": "https://github.com/creativewave/webpack-parts",
   "bugs": "https://github.com/creativewave/webpack-parts/issues",
   "repository": "github:creativewave/webpack-parts",
+  "type": "commonjs",
+  "exports": "./index.js",
   "peerDependencies": {
     "webpack": ">= 5"
   },
