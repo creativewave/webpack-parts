@@ -37,7 +37,7 @@ The configuration parameters are all optional and intentionally minimal in order
   npm i @cdoublev/webpack-parts
 ```
 
-`@cdoublev/webpack-parts` can be safely used with Webpack v5 in current NodeJS LTS and latest versions.
+`@cdoublev/webpack-parts` can be safely used with Webpack v5 in current NodeJS versions.
 
 Some parts depends on (and are documented with) Webpack loaders and plugins that are not automatically installed.
 
