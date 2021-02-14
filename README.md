@@ -96,6 +96,16 @@ Depends on [`css-loader >= 5`](https://github.com/webpack-contrib/css-loader), [
 
 Depends on [`babel-loader >= 8`](https://github.com/babel/babel-loader).
 
+### `loadJsDependencies`
+
+`loadJsDependencies()` resolves JavaScript files imported from `./node_modules/` in the project source files and transpiles their syntax with `babel`.
+
+Note: transpiling `node_modules` (dependencies) means a longer compilation time but it is required to transpile dependencies using targets defined by the project (in its `browserslist` configuration) instead of the targets defined by the dependency package author.
+
+Note: `@babel/plugin-transform-runtime` is required to re-use helpers injected by `babel` from `@babel/runtime`.
+
+Depends on [`babel-loader >= 8`](https://github.com/babel/babel-loader), [`@babel/preset-env >= 7`](https://github.com/babel/babel/tree/master/packages/babel-preset-env), [`@babel/runtime >= 7`](https://github.com/babel/babel/tree/master/packages/babel-runtime), and [`@babel/plugin-transform-runtime >= 7`](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-runtime).
+
 ### `serverDev`
 
 | Option | Type      | Default         |
