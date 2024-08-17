@@ -19,12 +19,12 @@
     "webpack": ">= 5"
   },
   "dependencies": {
-    "babel-loader": ">= 8",
-    "css-loader": ">= 5",
-    "html-webpack-plugin": ">= 5",
-    "mini-css-extract-plugin": ">= 1",
-    "postcss-loader": ">= 4",
-    "webpack-dev-server": ">= 3"
+    "babel-loader": "^8.0.0",
+    "css-loader": "^5.0.0",
+    "html-webpack-plugin": "^5.0.0",
+    "mini-css-extract-plugin": "^2.0.0",
+    "postcss-loader": "^8.0.0",
+    "webpack-dev-server": "^3.0.0"
   },
   "publishConfig": {
     "access": "public"
