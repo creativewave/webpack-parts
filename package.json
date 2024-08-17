@@ -18,7 +18,7 @@
   "peerDependencies": {
     "webpack": ">= 5"
   },
-  "optionalDependencies": {
+  "dependencies": {
     "@babel/plugin-transform-runtime": ">= 7",
     "@babel/preset-env": ">= 7",
     "@babel/runtime": ">= 7",
@@ -31,16 +31,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {
-    "@babel/plugin-transform-runtime": ">= 7",
-    "@babel/preset-env": ">= 7",
-    "@babel/runtime": ">= 7",
-    "babel-loader": ">= 8",
-    "css-loader": ">= 5",
-    "html-webpack-plugin": ">= 5",
-    "mini-css-extract-plugin": ">= 1",
-    "postcss-loader": ">= 4",
-    "webpack-dev-server": ">= 3"
   }
 }

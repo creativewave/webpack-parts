@@ -39,8 +39,6 @@ The configuration parameters are all optional and intentionally minimal in order
 
 `@cdoublev/webpack-parts` can be safely used with Webpack v5 in current NodeJS versions.
 
-Some parts depends on (and are documented with) Webpack loaders and plugins that are not automatically installed.
-
 ## Configuration
 
 ### `externalize`
@@ -63,8 +61,6 @@ Some parts depends on (and are documented with) Webpack loaders and plugins that
 | modules       | `Boolean|Object` | `{ localIdentName: '[name]_[local]_[hash:base64:5]' }` |
 
 `extractCss()` resolves CSS files imported in JavaScript files, transpile their PostCSS syntax and features, generates locally scoped CSS class names (CSS modules), and emits the corresponding files into the output directory.
-
-Depends on [`css-loader >= 5`](https://github.com/webpack-contrib/css-loader), [`postcss-loader >= 4`](https://github.com/webpack-contrib/postcss-loader), and [`mini-css-extract-plugin >= 1`](https://github.com/webpack-contrib/https://github.com/webpack-contrib/mini-css-extract-plugin).
 
 **Notes:**
 
@@ -94,8 +90,6 @@ Depends on [`css-loader >= 5`](https://github.com/webpack-contrib/css-loader), [
 
 `loadJs()` resolves JavaScript files defined as entry points or imported in other JavaScript files, transpiles their syntax with `babel`, extracts the Webpack runtime into a separate `runtime.js` file, and gather common modules into a single `common.js` file.
 
-Depends on [`babel-loader >= 8`](https://github.com/babel/babel-loader).
-
 ### `loadJsDependencies`
 
 `loadJsDependencies()` resolves JavaScript files imported from `./node_modules/` in the project source files and transpiles their syntax with `babel`.
@@ -103,8 +97,6 @@ Depends on [`babel-loader >= 8`](https://github.com/babel/babel-loader).
 Note: transpiling `node_modules` (dependencies) means a longer compilation time but it is required to transpile dependencies using targets defined by the project (in its `browserslist` configuration) instead of the targets defined by the dependency package author.
 
 Note: `@babel/plugin-transform-runtime` is required to re-use helpers injected by `babel` from `@babel/runtime`.
-
-Depends on [`babel-loader >= 8`](https://github.com/babel/babel-loader), [`@babel/preset-env >= 7`](https://github.com/babel/babel/tree/master/packages/babel-preset-env), [`@babel/runtime >= 7`](https://github.com/babel/babel/tree/master/packages/babel-runtime), and [`@babel/plugin-transform-runtime >= 7`](https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-runtime).
 
 ### `serverDev`
 
@@ -118,8 +110,6 @@ Depends on [`babel-loader >= 8`](https://github.com/babel/babel-loader), [`@babe
 | watch  | `Object`  | [watch](#watch) |
 
 `serverDev()` runs an HTTP server to request your bundled files, by default via `http://localhost:8080`, with hot module replacement enabled.
-
-Depends on [`webpack-dev-server >= 3`](https://github.com/webpack/webpack-dev-server/).
 
 ### `serverRender`
 
