@@ -92,14 +92,6 @@ It is intended to be used in a configuration to bundle a server application, whi
 
 `loadJs()` resolves JavaScript files defined as entry points or imported in other JavaScript files, transpiles their syntax with `babel`, extracts the Webpack runtime into a separate `runtime.js` file, and gather common modules into a single `common.js` file.
 
-### `loadJsDependencies`
-
-`loadJsDependencies()` resolves JavaScript files imported from `./node_modules/` in the project source files and transpiles their syntax with `babel`.
-
-Note: transpiling `node_modules` (dependencies) means a longer compilation time but it is required to transpile dependencies using targets defined by the project (in its `browserslist` configuration) instead of the targets defined by the dependency package author.
-
-Note: `@babel/plugin-transform-runtime` is required to re-use helpers injected by `babel` from `@babel/runtime`.
-
 ### `serverDev`
 
 | Option | Type      | Default         |
