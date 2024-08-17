@@ -47,7 +47,9 @@ The configuration parameters are all optional and intentionally minimal in order
 | ------ | ---------- | ------- |
 | keep   | `[String]` | `[]`    |
 
-`externalize()` excludes all `node_modules` from the bundle, which is recommended for server side script, and `keep` the required module names bundled.
+`externalize()` excludes all native modules from the bundle but `keep` some module names.
+
+It is intended to be used in a configuration to bundle a server application, which will import externalized modules with `require()`.
 
 ### `extractCss`
 
