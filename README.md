@@ -85,10 +85,10 @@ It is intended to be used in a configuration to bundle a server application, whi
 
 ### `loadJs`
 
-| Option  | Type        | Default          |
-| ------- | ----------- | ---------------- |
-| include | `Condition` | `undefined`      |
-| exclude | `Condition` | `/node_modules/` |
+| Option  | Type        | Default     |
+| ------- | ----------- | ----------- |
+| include | `Condition` | `undefined` |
+| exclude | `Condition` | `undefined` |
 
 `loadJs()` resolves JavaScript files defined as entry points or imported in other JavaScript files, transpiles their syntax with `babel`, extracts the Webpack runtime into a separate `runtime.js` file, and gather common modules into a single `common.js` file.
 
