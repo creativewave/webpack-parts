@@ -96,11 +96,9 @@ It is intended to be used in a configuration to bundle a server application, whi
 
 | Option | Type      | Default         |
 | ------ | --------- | --------------- |
-| https  | `Boolean` | `false`         |
 | domain | `String`  | `'localhost'`   |
 | port   | `Number`  | `8080`          |
 | path   | `String`  | `'/'`           |
-| proxy  | `String`  | `undefined`     |
 | watch  | `Object`  | [watch](#watch) |
 
 `serverDev()` runs an HTTP server to request your bundled files, by default via `http://localhost:8080`, with hot module replacement enabled.
