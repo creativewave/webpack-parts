@@ -25,7 +25,7 @@ The configuration parameters are all optional and intentionally minimal in order
   parts.extractFiles(),
   parts.extractCss(),
   parts.loadJs(),
-  parts.serverDev())
+  parts.serve())
 ```
 
 ## Installation
@@ -78,7 +78,7 @@ It is intended to be used in a configuration to bundle a server application, whi
 
 `hotModuleReload()` enables [hot module replacement](https://webpack.js.org/plugins/hot-module-replacement-plugin/).
 
-**Note:** it's automatically enabled with `serverDev()`.
+**Note:** it iss automatically enabled with `serve()`.
 
 ### `loadJs`
 
@@ -89,7 +89,7 @@ It is intended to be used in a configuration to bundle a server application, whi
 
 `loadJs()` resolves JavaScript files defined as entry points or imported in other JavaScript files, transpiles their syntax with `babel`, extracts the Webpack runtime into a separate `runtime.js` file, and gather common modules into a single `common.js` file.
 
-### `serverDev`
+### `serve`
 
 | Option | Type      | Default         |
 | ------ | --------- | --------------- |
@@ -97,7 +97,7 @@ It is intended to be used in a configuration to bundle a server application, whi
 | port   | `Number`  | `8080`          |
 | watch  | `Object`  | [watch](#watch) |
 
-`serverDev()` runs an HTTP server serving the bundled application loaded in `src/index.html` with hot module replacement enabled.
+`serve()` runs an HTTP server serving the bundled application loaded in `src/index.html` with hot module replacement enabled.
 
 ### `serverRender`
 

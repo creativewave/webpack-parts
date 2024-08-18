@@ -5,7 +5,7 @@ module.exports = {
     extractFiles: require('./lib/extractFiles'),
     hotModuleReload: require('./lib/hotModuleReload'),
     loadJs: require('./lib/loadJs'),
-    serverDev: require('./lib/serverDev'),
+    serve: require('./lib/serve'),
     serverRender: require('./lib/serverRender'),
     watch: require('./lib/watch'),
 }
