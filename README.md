@@ -59,8 +59,8 @@ It is intended for bundling a server application that will import externalized m
 
 ### extractCss
 
-| Option | Type | Default |
-| ------ | ---- | ------- |
+| Option | Default |
+| ------ | ------- |
 | [chunkFilename](https://github.com/webpack-contrib/mini-css-extract-plugin#chunkFilename) | `'[name]-[contenthash].[ext]'` |
 | [exclude](https://webpack.js.org/configuration/module/#ruleexclude) | `undefined` |
 | [filename](https://github.com/webpack-contrib/mini-css-extract-plugin#filename) | `'[name]-[contenthash].[ext]'` |
@@ -73,9 +73,9 @@ It is intended for bundling a server application that will import externalized m
 
 ### extractFiles
 
-| Option   | Type     | Default                |
-| -------- | -------- | ---------------------- |
-| filename | `String` | `'[hash][ext][query]'` |
+| Option | Default |
+| ------ | ------- |
+| [filename](https://webpack.js.org/configuration/output/#outputassetmodulefilename) | `'[hash][ext][query]'` |
 
 `extractFiles()` resolves multimedia files (images, fonts, pdf) imported from other files, and creates a copy in the output directory.
 
@@ -100,7 +100,7 @@ It is automatically enabled with `serve()` (`webpack-dev-server`) therefore it i
 
 | Option | Default |
 | ------ | ------- |
-| [domain]https://webpack.js.org/configuration/dev-server/#websocketurl (hostname) | `'localhost'` |
+| [domain](https://webpack.js.org/configuration/dev-server/#websocketurl) (hostname) | `'localhost'` |
 | [port](https://webpack.js.org/configuration/dev-server/#devserverport) | `8080` |
 | [watch](https://webpack.js.org/configuration/watch/#watchoptions) | [watch](#watch) |
 
