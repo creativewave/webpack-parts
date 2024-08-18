@@ -114,7 +114,7 @@ It is intended to be used in a configuration to bundle a server application, whi
 
 | Option           | Type        | Default          |
 | ---------------- | ----------- | ---------------- |
-| poll             | `Boolean`   | `100`            |
+| poll             | `Boolean`   | `200`            |
 | aggregateTimeout | `Number`    | `200`            |
 | ignored          | `Condition` | `/node_modules/` |
 
