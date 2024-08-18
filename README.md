@@ -105,7 +105,6 @@ It is intended to be used in a configuration to bundle a server application, whi
 | -------- | -------- | -------------- |
 | filename | `String` | `'render.js'`  |
 | mode     | `String` | `'production'` |
-| path     | `String` | `'/'`          |
 
 `serverRender()` bundles a JavaScript entry into a single file with the imported CSS excluded from it.
 
