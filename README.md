@@ -38,6 +38,17 @@ The configuration parameters are all optional and intentionally minimal in order
 
 ## Configuration
 
+### `buildRender`
+
+| Option   | Type     | Default        |
+| -------- | -------- | -------------- |
+| filename | `String` | `'render.js'`  |
+| mode     | `String` | `'production'` |
+
+`buildRender()` bundles a JavaScript entry into a single file with the imported CSS excluded from it.
+
+This entry should be located in a `server` directory at the root of your project. It's mostly meant to render the HTML of a JavaScript application on the server, before executing (hydrating) it client side.
+
 ### `externalize`
 
 | Option | Type       | Default |
@@ -98,17 +109,6 @@ It is intended to be used in a configuration to bundle a server application, whi
 | watch  | `Object`  | [watch](#watch) |
 
 `serve()` runs an HTTP server serving the bundled application loaded in `src/index.html` with hot module replacement enabled.
-
-### `serverRender`
-
-| Option   | Type     | Default        |
-| -------- | -------- | -------------- |
-| filename | `String` | `'render.js'`  |
-| mode     | `String` | `'production'` |
-
-`serverRender()` bundles a JavaScript entry into a single file with the imported CSS excluded from it.
-
-This entry should be located in a `server` directory at the root of your project. It's mostly meant to render the HTML of a JavaScript application on the server, before executing (hydrating) it client side.
 
 ### `watch`
 
