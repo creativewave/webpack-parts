@@ -21,10 +21,7 @@ The configuration parameters are all optional and intentionally minimal in order
   const parts = require('@cdoublev/webpack-parts')
 
   module.exports = merge(
-  {
-    mode: 'development',
-    plugins: [new HtmlWebpackPlugin()],
-  },
+  { mode: 'development' },
   parts.extractFiles(),
   parts.extractCss(),
   parts.loadJs(),
@@ -100,7 +97,7 @@ It is intended to be used in a configuration to bundle a server application, whi
 | port   | `Number`  | `8080`          |
 | watch  | `Object`  | [watch](#watch) |
 
-`serverDev()` runs an HTTP server to request your bundled files, by default via `http://localhost:8080`, with hot module replacement enabled.
+`serverDev()` runs an HTTP server serving the bundled application loaded in `src/index.html` with hot module replacement enabled.
 
 ### `serverRender`
 
